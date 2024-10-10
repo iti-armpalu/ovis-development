@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import styles from "./About.module.css";
+import styles from "./about.module.css";
 
 const About = () => {
   const sectionRef = useRef(null);
