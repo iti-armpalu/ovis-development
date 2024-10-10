@@ -1,0 +1,90 @@
+:root {
+  --background: #f8f8f8;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-raleway);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* Keyframes for fade-up animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* .hidden {
+  opacity: 0;
+}
+
+.fade-up {
+  animation: fadeUp 1s ease-in-out forwards;
+} */
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px); /* Keeps element out of view initially */
+  pointer-events: none; /* Prevents any interaction while hidden */
+}
+
+.fade-up {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeUp 1s ease-in-out forwards; /* Adjust the duration as needed */
+}

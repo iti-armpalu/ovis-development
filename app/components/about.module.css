@@ -1,0 +1,110 @@
+/* Base styles for the About section */
+.about {
+  padding: 4rem 2rem;
+  background-color: #6A757B; /* Section background color */
+  text-align: left;
+  color: #F8F8F8; /* Default text color */
+}
+
+/* .sectionTitle, .sectionDescription, .value {
+  opacity: 0;
+  transform: translateY(50px);
+} */
+
+.sectionTitle {
+  font-family: var(--font-ptSans);
+  font-weight: 400;
+  font-size: clamp(1rem, 4vw, 1.25rem); /* Fluid typography for the title */
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1.5rem;
+  color: #D2D6DD; /* Text color */
+}
+
+.sectionDescription {
+  font-family: var(--font-nixieOne);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 2.5vw, 2rem); /* Fluid typography for the h2 */
+  color: #F8F8F8;
+  margin-bottom: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.values {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+.value {
+  padding: 0.75rem 0;
+  text-align: left;
+}
+
+.value h3 {
+  font-family: var(--font-nixieOne);
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  color: #BBC2CA;
+  margin-bottom: 0.5rem;
+}
+
+.value p {
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  color: #D2D6DD;
+}
+
+/* Mobile Screens */
+/* @media (max-width: 767px) {
+  .value {
+    padding: 0.75rem 0;
+  }
+} */
+
+/* Responsive layout for larger screens */
+@media (min-width: 768px) {
+  .values {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* .values {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .value {
+    padding: 1.5rem;
+  } */
+
+  .about {
+    padding: 4rem 6rem; /* Increase padding for larger screens */
+    display: flex;
+    align-items: flex-start;
+    text-align: left; /* Align text to the left */
+  }
+
+  .sectionTitle {
+    flex: 1;
+    max-width: 200px;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  .contentWrapper {
+    flex: 3;
+  }
+
+  .sectionDescription {
+    margin-bottom: 2rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .values {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}

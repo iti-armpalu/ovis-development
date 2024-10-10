@@ -1,0 +1,116 @@
+/* Base styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #F8F8F8;
+  color: #202E33;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  font-size: 1rem;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Positioned slightly below */
+  transition: opacity 0s, transform 0s; /* Prevent initial flash of content */
+}
+
+.nav a {
+  text-decoration: none;
+  color: #202E33;
+  font-size: clamp(1rem, 2vw, 1.5rem); /* Fluid typography for links */
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Breakpoints */
+
+/* Phones (Portrait) - 320px to 480px */
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logo img {
+    width: 100px;
+  }
+
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav li {
+    margin: 0.5rem 0;
+  }
+
+  .nav a {
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+  }
+}
+
+/* Phones (Landscape) / Small Tablets (Portrait) - 481px to 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+  .logo img {
+    width: 120px;
+  }
+
+  .nav ul {
+    flex-direction: row;
+  }
+}
+
+/* Tablets (Landscape) - 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .logo img {
+    width: 140px;
+  }
+
+  .nav li {
+    margin: 0 0.75rem;
+  }
+
+  .nav a {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+  }
+}
+
+/* Larger Desktops - 1367px and beyond */
+@media (min-width: 1367px) {
+  .logo img {
+    width: 180px;
+  }
+
+  .nav li {
+    margin: 0 1.5rem;
+  }
+}
