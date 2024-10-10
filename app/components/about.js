@@ -20,7 +20,7 @@ const About = () => {
         y: 50,
         duration: 1,
         ease: "power3.out",
-        stagger: 0.5, // Stagger each item by 0.3 seconds
+        stagger: 0.5,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%", // Start when the top of the section is 80% of the way down the viewport
