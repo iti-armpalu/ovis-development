@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
 import styles from "./header.module.css";
-import logo from "../../public/images/ovis-logo.png";
+// import logo from "../../public/images/ovis-logo.png";
 
 const Header = () => {
   const navItemsRef = useRef([]);
@@ -34,11 +34,12 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.logo}>
         <Link href="/">
-          <Image
+          {/* <Image
             src={logo}
             alt="Logo"
             priority={true}
-          />
+          /> */}
+          Ovis
         </Link>
       </div>
       <nav className={styles.nav}>
