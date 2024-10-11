@@ -5,6 +5,7 @@ import styles from "./contact.module.css";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ContactForm } from "./contact-form";
 
 const Contact = () => {
   const sectionRef = useRef(null);
@@ -57,7 +58,7 @@ const Contact = () => {
         },
       });
 
-      // Animate the form
+      // Animate the email
       gsap.from(emailRef.current, {
         opacity: 0,
         y: 30,
@@ -69,7 +70,7 @@ const Contact = () => {
         },
       });
 
-      // Animate the end sentence
+      // Animate the form
       gsap.from(formRef.current, {
         opacity: 0,
         y: 40,
@@ -90,7 +91,6 @@ const Contact = () => {
     <section ref={sectionRef} className={styles.contact} id="contact">
       <h1
         ref={tagRef}
-        // className={`${styles.sectionTitle} ${tagAnimation.inView ? 'fade-up' : 'hidden'}`}
         className={`${styles.sectionTitle} `}
       >
         Contact
@@ -100,7 +100,6 @@ const Contact = () => {
         <div>
           <h2
             ref={titleRef}
-            // className={`${styles.sectionDescription} ${titleAnimation.inView ? 'fade-up' : 'hidden'}`}
             className={`${styles.sectionDescription} `}
           >
             We’re here to connect. Whether you’re an investor looking for unique
@@ -109,7 +108,6 @@ const Contact = () => {
           </h2>
           <p
             ref={emailRef}
-            //  className={`${emailAnimation.inView ? 'fade-up' : 'hidden'}`}
           >
             For any inquiries, submit a contact form or email us at
             <button onClick={copyToClipboard} className={styles.copyButton}>
@@ -120,13 +118,11 @@ const Contact = () => {
         </div>
         <div>
           <div
-            // ref={formAnimation.ref}
             ref={formRef}
-            // className={`${styles.formContainer}
-            // ${formAnimation.inView ? 'fade-up' : 'hidden'}`}
             className={styles.formContainer}
           >
-            <form className={styles.contactForm}>
+            <ContactForm />
+            {/* <form className={styles.contactForm}>
               <div className={styles.formGroupHalf}>
                 <div className={styles.formGroup}>
                   <label htmlFor="name">Name</label>
@@ -149,39 +145,10 @@ const Contact = () => {
               <button type="submit" className={styles.button}>
                 Send
               </button>
-            </form>
+            </form> */}
           </div>
         </div>
       </div>
-
-      {/* <div className={`${styles.contentWrapper} ${descriptionAnimation.inView ? 'fade-up' : 'hidden'}`}>
-        <p className={`${styles.sectionDescription}`}>
-          For any inquiries, submit a contact form or email us at <a href="mailto:jp@ovis.vc">jp@ovis.vc</a>
-        </p>
-        <div ref={formAnimation.ref} className={`${styles.formContainer} ${formAnimation.inView ? 'fade-up' : 'hidden'}`}>
-          <form className={styles.contactForm}>
-            <div className={styles.formGroup}>
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div className={styles.formGroup}>
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div className={styles.formGroup}>
-              <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" className={styles.submitButton}>Submit</button>
-          </form>
-        </div>
-        <p
-          ref={endSentenceAnimation.ref}
-          className={`${styles.endSentence} ${endSentenceAnimation.inView ? 'fade-up' : 'hidden'}`}
-        >
-          We look forward to hearing from you and will respond promptly to your message.
-        </p>
-      </div> */}
     </section>
   );
 };

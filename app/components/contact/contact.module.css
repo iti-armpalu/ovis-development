@@ -1,9 +1,9 @@
 /* Base styles for the Contact section */
 .contact {
   padding: 4rem 2rem; /* Default padding */
-  background-color: #D2D6DD; /* Section background color */
+  background-color: #d2d6dd; /* Section background color */
   text-align: left;
-  color: #F8F8F8; /* Default text color */
+  color: #f8f8f8; /* Default text color */
 }
 
 .sectionTitle {
@@ -13,14 +13,14 @@
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   margin-bottom: 1.5rem;
-  color: #6A757B; /* Text color */
+  color: #6a757b; /* Text color */
 }
 
 .sectionDescription {
   font-family: var(--font-nixieOne);
   font-weight: 400;
   font-size: clamp(1.125rem, 2.5vw, 1.5rem); /* Fluid typography for the h2 */
-  color: #202E33;
+  color: #202e33;
   margin-bottom: 3rem;
   margin-left: auto;
   margin-right: auto;
@@ -32,98 +32,35 @@
 }
 
 .contentWrapper p {
-  color: #202E33;
+  color: #202e33;
   font-size: clamp(1rem, 2.5vw, 1rem);
   margin-bottom: 2rem;
 }
 
-/* Add styles for the copy button */
+/* Copy button & text */
 .copyButton {
   background-color: none;
-  color: #202E33;
+  color: #202e33;
   width: fit-content;
   padding: 0 0.5rem 0.25rem;
   text-decoration: none;
-  border-bottom: 1px solid #202E33;
+  border-bottom: 1px solid #202e33;
   transition: color 0.3s ease;
 }
 
 .copyButton:hover {
-  color: #6A757B;
+  color: #6a757b;
 }
 
 .copiedText {
   margin-left: 0.5rem;
   font-size: 0.875rem;
-  color: #6A757B;
+  color: #6a757b;
 }
 
-
-/* Form */
-
-
+/* Form container */
 .formContainer {
-  margin-bottom: 2rem; 
-}
-
-.contactForm {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-
-.formGroupHalf {
-  display: flex;
-  gap: 1rem; /* Space between the name and email fields */
-}
-
-.formGroupHalf .formGroup {
-  flex: 1;
-}
-
-.formGroup label {
-  font-size: 1rem;
-  color: #6A757B;
-  margin-bottom: 0.25rem;
-}
-
-.formGroup input,
-.formGroup textarea {
-  border: none;
-  border-bottom: 1px solid #6A757B;
-  background: none;
-  color: #202E33;
-  padding: 0;
-  font-size: 1rem;
-  width: 100%;
-}
-
-
-.formGroup input:focus,
-.formGroup textarea:focus {
-  outline: none; /* Remove outline on focus */
-  border-bottom: 1px solid #202E33; /* Blue underline on focus */
-}
-
-.button {
-  font-family: var(--font-ptSans);
-  background-color: none;
-  color: #202E33;
-  width: fit-content;
-  padding: 0.5rem 0.5rem;
-  text-decoration: none;
-  border-bottom: 1px solid #202E33;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  color: #6A757B;
+  margin-bottom: 2rem;
 }
 
 /* Larger screens: Adjust padding and layout */
