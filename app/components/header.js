@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import styles from "./header.module.css";
 import logo from "../assets/ovis-logo.png";
+import ScrollLink from "./ui/scroll-link";
 
 const Header = () => {
   const navItemsRef = useRef([]);
@@ -34,11 +35,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.logo}>
         <Link href="/">
-          <Image
-            src={logo}
-            alt="Logo"
-            priority={true}
-          />
+          <Image src={logo} alt="Logo" priority={true} />
         </Link>
       </div>
       <nav className={styles.nav}>
@@ -49,7 +46,7 @@ const Header = () => {
               ref={(el) => (navItemsRef.current[index] = el)}
               className={styles.navItem}
             >
-              <Link href={`#${label.toLowerCase()}`}>{label}</Link>
+              <ScrollLink label={label} targetId={label.toLowerCase()} />
             </li>
           ))}
         </ul>

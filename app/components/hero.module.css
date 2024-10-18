@@ -1,73 +1,69 @@
-/* Base styles for the hero section */
 .hero {
   position: relative;
-  height: calc(100vh - 85.5px); /* Full screen height */
-  background-image: url("/images/ovis-bg.jpg");
-  background-size: cover;
-  background-position: center;
+  height: calc(100vh - 85.5px);
+  background: url("/images/ovis-bg.jpg") center/cover no-repeat;
   padding: 4rem 2rem;
-
-
 }
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(248, 248, 248, 0.9); /* 90% opacity layer */
+  inset: 0; /* Shorter syntax for top, left, right, and bottom set to 0 */
+  background-color: rgba(248, 248, 248, 0.9);
   z-index: 1;
 }
 
 .content {
   position: relative;
   z-index: 2;
-  width: 100%;
-  /* max-width: 1200px; */
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: #202e33;
+  width: 100%;
+  height: 100%;
 }
 
 .title {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  flex-wrap: wrap; /* For better responsiveness */
+}
+
+/* Prevent initial flicker by setting opacity */
+.title h1,
+.title p,
+.button {
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Smooth transition for showing elements */
 }
 
 .title h1 {
   font-family: var(--font-nixieOne);
   font-weight: 400;
-  font-size: clamp(2rem, 4vw, 3.5rem); /* Fluid typography */
+  font-size: clamp(2rem, 4vw, 3.5rem);
   margin-bottom: 1.5rem;
-  width: 100%;
 }
 
 .title p {
-  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Fluid typography */
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   margin-bottom: 2rem;
   width: 80%;
 }
 
 .buttons {
   display: flex;
-  gap: 1rem; /* Space between the two buttons */
-  justify-content: center;
-  width: fit-content;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
 .button {
   font-family: var(--font-ptSans);
-  background-color: none;
   color: #202e33;
   padding: 0.75rem 0;
   text-decoration: none;
   border-bottom: 1px solid #202e33;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .button:hover {
@@ -76,35 +72,48 @@
 
 /* Breakpoints */
 
-/* Mobile Screens - Stack elements in a column */
-@media (max-width: 767px) {
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575px) {
+  .hero {
+    height: calc(100vh - 66.5px);
+    padding: 2rem;
+  }
+
   .content {
     align-items: flex-start;
     text-align: left;
   }
+
   .title {
-    display: flex;
     flex-direction: column;
   }
 
-  .title h1,
-  .title p {
+  .title h1, .title p {
     margin-bottom: 1rem;
   }
 
   .buttons {
     flex-direction: column;
-    /* width: 100%; */
-  }
-
-  .button {
-    width: 100%;
-    /* text-align: center; */
   }
 }
 
-/* Tablets and Larger Screens - Align title and paragraph in a row on opposite ends */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .hero {
+    height: calc(100vh - 72.5px);
+  }
+
+  .title {
+    flex-direction: column;
+  }
+}
+
+/* Combine styles for tablets and desktops */
 @media (min-width: 768px) {
+  .hero {
+    height: calc(100vh - 78.7px); /* Same for tablets and large devices */
+  }
+
   .content {
     align-items: flex-start;
     text-align: left;
@@ -112,26 +121,25 @@
 
   .title h1 {
     width: 50%;
-    order: 2;
     text-align: right;
-    /* margin-right: 2rem; */
+    order: 2;
   }
 
   .title p {
     width: 40%;
-    order: 1;
     text-align: left;
-
+    order: 1;
   }
 
   .buttons {
     flex-direction: row;
-    margin-top: 0;
-    justify-content: flex-start;
     gap: 2rem;
   }
+}
 
-  .button {
-    width: auto;
+/* Extra large devices (1200px and up) */
+@media (min-width: 1200px) {
+  .hero {
+    height: calc(100vh - 81.2px);
   }
 }

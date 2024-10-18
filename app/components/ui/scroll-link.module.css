@@ -1,0 +1,15 @@
+.scrollLink {
+  font-family: var(--font-ptSans);
+  font-weight: 400;
+  color: #202e33;
+  padding: 0.5rem;
+  text-decoration: none;
+  border-bottom: 1px solid #202e33;
+  transition: background-color 0.3s ease;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  cursor: pointer;
+}
+
+.scrollLink:hover {
+  color: #6a757b;
+}
